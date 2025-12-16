@@ -1,0 +1,21 @@
+YAML
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bulgakova-nginx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: bulgakova-app
+  template:
+    metadata:
+      labels:
+        app: bulgakova-app
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
