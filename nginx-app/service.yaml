@@ -1,0 +1,14 @@
+YAML
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: bulgakova-service
+spec:
+  selector:
+    app: bulgakova-app
+  ports:
+  - port: 80
+    targetPort: 80
+  type: ClusterIP
+
